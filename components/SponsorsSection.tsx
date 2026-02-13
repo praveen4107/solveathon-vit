@@ -3,12 +3,12 @@ export default function SponsorsSection() {
     {
       name: "ETH India",
       logo: "/sponsors/ETHIndia_idaNAlCG75_0.png",
-      tier: "Gold Sponsor",
+      tier: "Devfolio",
     },
     {
       name: "Sponsors",
       logo: "/sponsors/ETHIndia@2x.png",
-      tier: "Silver Sponsor",
+      tier: "ETHIndia",
     },
   ];
 

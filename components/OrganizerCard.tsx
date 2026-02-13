@@ -1,6 +1,6 @@
 type OrganizerCardProps = {
   name: string;
-  email: string;
+  email?: string;
   role?: string;
   avatarCharIndex?: number;
 };

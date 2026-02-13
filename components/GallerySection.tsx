@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 
-export default function GallerySection() {
+export default function GallerySection({ glass = false }: { glass?: boolean }) {
   const [activeTab, setActiveTab] = useState<"24" | "23">("24");
   const [showAll, setShowAll] = useState(false);
 
@@ -27,10 +27,16 @@ export default function GallerySection() {
     ],
   };
 
-  const displayedImages = showAll ? galleries[activeTab] : galleries[activeTab].slice(0, 3);
+  const displayedImages = showAll
+    ? galleries[activeTab]
+    : galleries[activeTab].slice(0, 3);
+
+  const baseClasses =
+    "relative px-4 md:px-8 lg:px-20 py-12 md:py-16 overflow-hidden";
+  const glassClasses = " bg-neutral-900/70 border-t border-white/10";
 
   return (
-    <section className="relative px-4 md:px-8 lg:px-20 py-12 md:py-16 overflow-hidden">
+    <section id="gallery" className={baseClasses + (glass ? glassClasses : "")}>
       {/* Decorative background elements */}
       <div className="absolute top-0 left-1/4 w-96 h-96 bg-cyan-500/5 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-emerald-500/5 rounded-full blur-3xl pointer-events-none" />

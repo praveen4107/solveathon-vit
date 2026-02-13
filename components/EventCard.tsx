@@ -1,7 +1,7 @@
 type EventCardProps = {
   icon: string;
   title: string;
-  desc: string;
+  desc?: string;
   highlight?: boolean;
 };
 
@@ -22,9 +22,9 @@ export default function EventCard({
     >
       <div className="text-4xl mb-5">{icon}</div>
       <h3 className="mb-2 text-lg font-semibold">{title}</h3>
-      <p className={`text-sm ${highlight ? "text-black" : "text-gray-400 group-hover:text-black"}`}>
+      {/*<p className={`text-sm ${highlight ? "text-black" : "text-gray-400 group-hover:text-black"}`}>
         {desc}
-      </p>
+      </p>*/}
     </div>
   );
 }

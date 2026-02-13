@@ -2,9 +2,10 @@ export default function Footer() {
   const quickLinks = [
     { label: "HOME", href: "/" },
     { label: "PROBLEMS", href: "/problems" },
-    { label: "MERCH", href: "/merch" },
+    //{ label: "MERCH", href: "/merch" },
     { label: "ORGANIZERS", href: "/#organizers" },
-    { label: "SPONSORS", href: "#" },
+    { label: "GALLERY", href: "#gallery" },
+    { label: "FAQ", href: "#faq" },
   ];
 
   return (
@@ -50,22 +51,43 @@ export default function Footer() {
           </div>
 
           {/* Contact */}
-          <div>
-            <h4 className="text-base md:text-lg font-bold text-white mb-4 tracking-widest">
-              GET IN TOUCH
-            </h4>
-            <a
-              href="mailto:solveathon@vit.ac.in"
-              className="text-gray-400 hover:text-cyan-400 transition text-xs md:text-sm flex items-center gap-2 mb-3"
-            >
-              <i className="fas fa-envelope text-cyan-400" />
-              solveathon@vit.ac.in
-            </a>
-            <p className="text-gray-500 text-xs flex items-start gap-2">
-              <i className="fas fa-map-marker-alt text-emerald-300 mt-0.5" />
-              <span>VIT Chennai, Tamil Nadu</span>
-            </p>
-          </div>
+          <div className="space-y-4">
+  <h4 className="text-base md:text-lg font-bold text-white mb-4 tracking-widest uppercase">
+    Contact Us
+  </h4>
+
+  <div>
+    <p className="font-medium text-white text-sm md:text-base">
+      Dr. Natarajan B
+      <span className="block text-gray-400 text-xs md:text-sm font-normal">
+        Event Coordinator
+      </span>
+    </p>
+
+    <a
+      href="mailto:natarajan.b@vit.ac.in"
+      className="mt-2 inline-flex items-center gap-2 text-gray-300 hover:text-cyan-400 transition-colors text-sm"
+    >
+      <i className="fas fa-envelope text-cyan-400" />
+      natarajan.b@vit.ac.in
+    </a>
+  </div>
+
+  <div className="flex items-start gap-2 text-gray-400 text-sm">
+    <i className="fas fa-map-marker-alt text-emerald-300 mt-1 flex-shrink-0" />
+    <span>
+      VIT Chennai<br />
+    </span>
+  </div>
+
+  {/* Optional: add phone if you have official contact */}
+  {/* 
+  <div className="flex items-center gap-2 text-gray-300 text-sm">
+    <i className="fas fa-phone-alt text-cyan-400" />
+    <span>+91 44 3993 1555 (General Enquiry)</span>
+  </div>
+  */}
+</div>
         </div>
 
         {/* Divider */}

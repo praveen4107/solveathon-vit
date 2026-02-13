@@ -1,44 +1,76 @@
 import OrganizerCard from "./OrganizerCard";
 
-const organizers = [
+const facultyOrganizers = [
   {
     name: "Dr. Trilok Nath Pandey",
     email: "triloknath.pandey@vit.ac.in",
-    role: "Faculty Coordinator",
+    role: "Event Coordinator",
   },
   {
     name: "Dr. Mansoor Hussain D",
     email: "mansoorhussain.d@vit.ac.in",
-    role: "Faculty Coordinator",
+    role: "Event Coordinator",
   },
   {
     name: "Dr. Natarajan B",
     email: "natarajan.b@vit.ac.in",
-    role: "Faculty Coordinator",
+    role: "Event Coordinator",
   },
 ];
 
-export default function OrganizersSection() {
+const studentCoordinators = [
+  {
+    name: "Praveen",
+    email: "praveenraj.j2024@vitstudent.ac.in",
+    role: "Student Coordinator",
+  },
+  {
+    name: "Chandan",
+    email: "chandan.singh2024@vitstudent.ac.in",
+    role: "Student Coordinator",
+  },
+];
+
+export default function OrganizersSection({ glass = false }: { glass?: boolean }) {
+  const baseClasses =
+    "relative px-4 md:px-8 lg:px-20 py-12 md:py-16 overflow-hidden";
+  const glassClasses = " bg-neutral-900/70 border-t border-white/10";
+
   return (
-    <section id="organizers" className="relative px-4 md:px-8 lg:px-20 py-12 md:py-16 overflow-hidden">
+    <section className={baseClasses + (glass ? glassClasses : "")}>
       {/* Decorative background elements */}
       <div className="absolute top-0 left-1/4 w-96 h-96 bg-cyan-500/5 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-emerald-500/5 rounded-full blur-3xl pointer-events-none" />
 
       <div className="relative z-10 max-w-6xl mx-auto">
         <h2 className="text-2xl md:text-3xl font-bold">Organizers</h2>
-        <p className="mt-1 text-gray-400 text-sm">
-          Meet the team making it all happen
-        </p>
 
+        {/* Faculty Organizers */}
         <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {organizers.map((organizer) => (
+          {facultyOrganizers.map((organizer) => (
             <OrganizerCard
               key={organizer.email}
               name={organizer.name}
               email={organizer.email}
               role={organizer.role}
               avatarCharIndex={4}
+            />
+          ))}
+        </div>
+
+        {/* Student Coordinators */}
+        <h3 className="mt-14 text-xl md:text-2xl font-semibold">
+          Student Coordinators
+        </h3>
+
+        <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6">
+          {studentCoordinators.map((student) => (
+            <OrganizerCard
+              key={student.email}
+              name={student.name}
+              email={student.email}
+              role={student.role}
+              avatarCharIndex={0}
             />
           ))}
         </div>

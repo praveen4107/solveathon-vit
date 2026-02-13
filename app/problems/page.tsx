@@ -25,9 +25,9 @@ export default function ProblemsPage() {
             20 UNIQUE CHALLENGES TO SOLVE
           </p>
 
-          <p className="mt-2 text-xs md:text-sm text-gray-400">
+          {/*<p className="mt-2 text-xs md:text-sm text-gray-400">
             SUSTAINABLE TOMORROW, SHAPED TODAY!
-          </p>
+          </p>*/}
 
           <div className="mt-8 md:mt-10 flex justify-center gap-3 md:gap-4 flex-wrap">
             <a

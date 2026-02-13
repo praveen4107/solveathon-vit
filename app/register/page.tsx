@@ -4,7 +4,7 @@ import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 
 export default function RegisterPage() {
-  const googleFormUrl = "https://docs.google.com/forms/d/YOUR_FORM_ID/viewform";
+  const registrationUrl = "https://forms.gle/toz4cTtwXcctk49h8";
 
   return (
     <>
@@ -28,9 +28,9 @@ export default function RegisterPage() {
                 SOLVE-A-THON&apos;26 REGISTRATION
               </h1>
 
-              <p className="text-base md:text-lg text-gray-300 mb-3">
-                Be part of an exciting 2-day hackathon where innovation meets sustainability
-              </p>
+              {/*<p className="text-base md:text-lg text-gray-300 mb-3">
+                Be part of an exciting 2-day inter-hostel hackathon
+              </p>*/}
 
               <p className="text-gray-400 text-sm md:text-base mb-10">
                 27TH – 28TH MARCH 2026 | VIT CHENNAI
@@ -79,13 +79,12 @@ export default function RegisterPage() {
 
             {/* Call to Action */}
             <div className="text-center">
-              <p className="text-gray-400 mb-6 text-sm md:text-base">
+              {/*<p className="text-gray-400 mb-6 text-sm md:text-base">
                 Ready to make a difference? Register now and secure your spot!
-              </p>
+              </p>*/}
               <a
-                href={googleFormUrl}
+                href={registrationUrl}
                 target="_blank"
-                rel="noopener noreferrer"
                 className="inline-block bg-cyan-400 text-black px-6 md:px-10 py-2.5 md:py-3 font-bold uppercase text-sm md:text-base tracking-widest hover:bg-cyan-300 transition cursor-pointer"
               >
                 <i className="fas fa-pen-to-square mr-3" />

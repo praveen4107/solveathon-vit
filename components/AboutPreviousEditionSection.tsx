@@ -1,12 +1,20 @@
-export default function AboutPreviousEditionSection() {
+export default function AboutPreviousEditionSection({
+  glass = true,
+}: {
+  glass?: boolean;
+}) {
   const stats = [
     { label: "Days", value: "2" },
     { label: "Prize Pool", value: "60K" },
     { label: "Participants", value: "100+" },
   ];
 
+  const baseClasses =
+    "relative px-4 md:px-8 lg:px-20 py-12 md:py-16 overflow-hidden";
+  const glassClasses = " bg-neutral-900/70 border-t border-white/10";
+
   return (
-    <section className="relative px-4 md:px-8 lg:px-20 py-12 md:py-16 bg-neutral-900/70 border-t border-white/10 overflow-hidden">
+    <section className={baseClasses + (glass ? glassClasses : "")}>
       {/* Decorative background elements */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-emerald-500/5 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-cyan-500/5 rounded-full blur-3xl pointer-events-none" />
@@ -18,19 +26,15 @@ export default function AboutPreviousEditionSection() {
         </p>
 
         {/* Description */}
-        <div className="mt-8 max-w-3xl text-gray-300 leading-relaxed space-y-4">
-          <p>
-            Solve-A-Thon &apos;25 brought together brilliant minds to tackle real-world
-            challenges. With themes spanning sustainability, technology, and social
-            impact, participants showcased innovative solutions that garnered industry
-            recognition.
-          </p>
-          <p>
-            The event featured expert mentorship, exciting workshops, and
-            opportunities to network with leading tech companies and innovators. It
-            was a perfect blend of competition, learning, and community building.
-          </p>
-        </div>
+<div className="mt-8 text-gray-300 text-sm md:text-base leading-relaxed space-y-4">
+  <p>
+    Solve-A-Thon &apos;25 was a 24-hour hackathon hosted by the Hostel Committee of VIT Chennai, uniting passionate innovators to solve real-world challenges across hostel life, sustainability, student well-being, and smart campus technology. The event encouraged empathy-driven thinking and practical, impact-focused solutions.
+  </p>
+  <p>
+    Through rapid collaboration, mentorship, and hands-on prototyping, participants developed high-quality projects and strengthened the culture of innovation at VIT Chennai. With 100+ participants and a ₹60,000 prize pool, Solve-A-Thon &apos;25 set the stage for an even bigger 2026 edition.
+  </p>
+</div>
+
 
         {/* Stats */}
         <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6">

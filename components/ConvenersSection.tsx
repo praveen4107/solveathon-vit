@@ -1,0 +1,43 @@
+import ConvenersCard from "./ConvenersCard";
+
+const conveners = [
+  {
+    name: "Dr. Janardhan Reddy K",
+    role: "Convener, Director – Hostel",
+  },
+  {
+    name: "Dr. Felix A",
+    role: "Co-Convener, Deputy Director – Hostel",
+  },
+];
+
+export default function ConvenersSection({ glass = true }: { glass?: boolean }) {
+  const baseClasses =
+    "relative px-4 md:px-8 lg:px-20 py-12 md:py-16 overflow-hidden";
+  const glassClasses = " bg-neutral-900/70 border-t border-white/10";
+
+  return (
+    <section id="organizers" className={baseClasses + (glass ? glassClasses : "")}>
+      {/* Decorative background elements */}
+      <div className="absolute top-0 right-0 w-96 h-96 bg-emerald-500/5 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-96 h-96 bg-cyan-500/5 rounded-full blur-3xl pointer-events-none" />
+
+      <div className="relative z-10 max-w-6xl mx-auto">
+        <h2 className="text-2xl md:text-3xl font-bold">
+          Convener &amp; Co-Convener
+        </h2>
+
+        <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-6">
+          {conveners.map((person) => (
+            <ConvenersCard
+              key={person.name}   // ✅ changed key
+              name={person.name}
+              role={person.role}
+              avatarCharIndex={4}
+            />
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}

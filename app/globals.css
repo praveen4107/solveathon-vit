@@ -129,37 +129,8 @@ body {
 @layer base {
   * {
     @apply border-border outline-ring/50;
-    cursor: url('/cursor/arrow.png'), auto !important;
   }
   body {
     @apply bg-background text-foreground;
-  }
-}
-
-@layer components {
-  /* Specific cursor styles - override everything */
-  a,
-  button,
-  [role="button"],
-  [onclick],
-  select,
-  input[type="button"],
-  input[type="submit"],
-  input[type="reset"],
-  .cursor-pointer {
-    cursor: url('/cursor/link.png'), pointer !important;
-  }
-  
-  input[type="text"],
-  input[type="email"],
-  input[type="password"],
-  input[type="number"],
-  textarea {
-    cursor: url('/cursor/beam.png'), text !important;
-  }
-  
-  input[type="checkbox"],
-  input[type="radio"] {
-    cursor: url('/cursor/link.png'), pointer !important;
   }
 }

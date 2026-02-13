@@ -12,21 +12,25 @@ const eventDetails = [
     icon: "fas fa-location-dot",
     iconColor: "text-emerald-400",
     title: "Venue",
-    info: "Kasturiba Hall",
-    description: "VIT Chennai Campus",
+    info: "Updating Soon",
+    description: "Will be updated soon",
   },
   {
     icon: "fas fa-clock",
     iconColor: "text-cyan-400",
     title: "Duration",
-    info: "48 Hours",
+    info: "24 Hours",
     description: "Non-stop hackathon",
   },
 ];
 
-export default function EventDetailsSection() {
+export default function EventDetailsSection({ glass = false }: { glass?: boolean }) {
+  const baseClasses =
+    "relative px-4 md:px-8 lg:px-20 py-12 md:py-16 overflow-hidden";
+  const glassClasses = " bg-neutral-900/70 border-t border-white/10";
+
   return (
-    <section className="relative px-4 md:px-8 lg:px-20 py-12 md:py-16 overflow-hidden">
+    <section className={baseClasses + (glass ? glassClasses : "")}>
       {/* Interactive background */}
       <div className="absolute inset-0 opacity-30">
         
@@ -46,7 +50,8 @@ export default function EventDetailsSection() {
           {eventDetails.map((detail, idx) => (
             <div
               key={idx}
-              className="relative min-h-[200px] sm:min-h-[220px] lg:min-h-[240px] p-5 sm:p-6 lg:p-8 border-2 bg-neutral-900/90 border-cyan-400/40 hover:bg-cyan-400 hover:border-cyan-400 transition-all duration-150 ease-in-out cursor-pointer group"
+              className="relative p-5 sm:p-6 lg:p-8 border-2 bg-neutral-900/90 border-cyan-400/40 hover:bg-cyan-400 hover:border-cyan-400 transition-all duration-150 ease-in-out cursor-pointer group"
+
             >
               <div className={`text-3xl sm:text-4xl mb-4 sm:mb-5 ${detail.iconColor} group-hover:text-black transition-colors duration-150`}>
                 <i className={detail.icon} />
@@ -57,9 +62,9 @@ export default function EventDetailsSection() {
               <p className="text-2xl sm:text-3xl font-bold text-emerald-300 mb-2 group-hover:text-black transition-colors duration-150">
                 {detail.info}
               </p>
-              <p className="text-sm text-gray-400 group-hover:text-black transition-colors duration-150">
+              {/*<p className="text-sm text-gray-400 group-hover:text-black transition-colors duration-150">
                 {detail.description}
-              </p>
+              </p>*/}
             </div>
           ))}
         </div>

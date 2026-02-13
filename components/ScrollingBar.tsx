@@ -3,53 +3,79 @@
 import { useEffect, useRef, useState } from "react";
 
 export default function ScrollingBar() {
-  const blocks = ["A BLOCK", "B BLOCK", "C BLOCK", "D1 BLOCK", "D2 BLOCK", "E BLOCK"];
+  const blocks = ["Registrations Now Open for Solve-A-Thon’26", "27–28 March 2026", "Secure Your Team’s Spot"];
 
+  const containerRef = useRef<HTMLDivElement>(null);
   const trackRef = useRef<HTMLDivElement>(null);
-  const [distance, setDistance] = useState(0);
+  const [setCount, setSetCount] = useState(2);
 
-  // Measure exact width → required for true seamless animation
   useEffect(() => {
-    const measure = () => {
-      if (!trackRef.current) return;
-      const width = trackRef.current.scrollWidth / 2; // because duplicated once
-      setDistance(width);
+    const container = containerRef.current;
+    const track = trackRef.current;
+    if (!container || !track) return;
+
+    const updateMeasurements = () => {
+      const firstSet = track.querySelector(".content-set") as HTMLElement | null;
+      if (!firstSet) return;
+
+      const contentWidth = firstSet.offsetWidth;
+      const containerWidth = container.offsetWidth;
+      if (!contentWidth || !containerWidth) return;
+
+      // Ensure the strip is long enough to cover the viewport while animating.
+      const neededSets = Math.max(2, Math.ceil(containerWidth / contentWidth) + 1);
+      setSetCount(neededSets);
+      track.style.setProperty("--scroll-distance", `-${contentWidth}px`);
     };
 
-    measure();
-    window.addEventListener("resize", measure);
-    return () => window.removeEventListener("resize", measure);
+    const resizeObserver = new ResizeObserver(updateMeasurements);
+    resizeObserver.observe(container);
+    resizeObserver.observe(track);
+
+    const rafId = requestAnimationFrame(updateMeasurements);
+
+    return () => {
+      cancelAnimationFrame(rafId);
+      resizeObserver.disconnect();
+    };
   }, []);
 
   return (
-    <div className="w-full bg-emerald-400 py-1.5 overflow-hidden">
+    <div ref={containerRef} className="w-full bg-emerald-400 py-1.5 overflow-hidden">
       <div
         ref={trackRef}
-        className="flex w-max items-center gap-10"
-        style={{
-          animation: distance
-            ? `marquee ${distance < 500 ? 8 : 16}s linear infinite`
-            : "none",
-        }}
+        className="flex w-max items-center animate-scroll"
       >
-        {[...blocks, ...blocks].map((block, idx) => (
-          <div key={idx} className="flex items-center gap-10">
-            <span className="text-black font-bold text-xs md:text-sm tracking-widest">
-              {block}
-            </span>
-            {idx !== blocks.length * 2 - 1 && <span className="text-black/80">•</span>}
+        {Array.from({ length: setCount }).map((_, setIdx) => (
+          <div
+            key={`set-${setIdx}`}
+            className="flex items-center gap-10 pr-10 content-set"
+            aria-hidden={setIdx > 0}
+          >
+            {blocks.map((block, idx) => (
+              <div key={`${setIdx}-${idx}`} className="flex items-center gap-10">
+                <span className="text-black font-bold text-xs md:text-sm tracking-widest whitespace-nowrap">
+                  {block}
+                </span>
+                <span className="text-black/80">•</span>
+              </div>
+            ))}
           </div>
         ))}
       </div>
 
-      <style jsx>{`
-        @keyframes marquee {
-          from {
+      <style jsx global>{`
+        @keyframes scroll {
+          0% {
             transform: translateX(0);
           }
-          to {
-            transform: translateX(-${distance}px);
+          100% {
+            transform: translateX(var(--scroll-distance, -50%));
           }
+        }
+
+        .animate-scroll {
+          animation: scroll 20s linear infinite;
         }
       `}</style>
     </div>

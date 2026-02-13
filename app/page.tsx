@@ -5,10 +5,11 @@ import EventCard from "../components/EventCard";
 import EventCountdown from "../components/EventCountdown";
 import EventDetailsSection from "../components/EventDetailsSection";
 import ThemesSection from "../components/ThemesSection";
+import ConvenersSection from "../components/ConvenersSection";
 import OrganizersSection from "../components/OrganizersSection";
+import HostelTeamSection from "../components/HostelTeamSection";
 import StudentCoordinatorsSection from "../components/StudentCoordinatorsSection";
 import NewPrizePoolSection from "../components/NewPrizePoolSection";
-import SponsorsSection from "../components/SponsorsSection";
 import GallerySection from "../components/GallerySection";
 import AboutPreviousEditionSection from "../components/AboutPreviousEditionSection";
 import FAQSection from "../components/FAQSection";
@@ -66,35 +67,38 @@ export default function Home() {
       {/* SCROLLING BAR */}
       <ScrollingBar />
 
-      {/* COUNTDOWN */}
-      <EventCountdown />
+      {/* COUNTDOWN (no glass) */}
+      <EventCountdown glass />
 
-      {/* EVENT DETAILS */}
-      <EventDetailsSection />
+      {/* EVENT DETAILS (glass) */}
+      <EventDetailsSection glass={false} />
 
-      {/* THEMES & PROBLEM STATEMENTS */}
-      <ThemesSection />
+      {/* THEMES & PROBLEM STATEMENTS (no glass) */}
+      <ThemesSection glass />
 
-      {/* ORGANIZERS */}
-      <OrganizersSection />
+      {/* CONVENERS & CO-CONVENERS (glass) */}
+      <ConvenersSection glass={false} />
 
-      {/* STUDENT COORDINATORS */}
-      <StudentCoordinatorsSection />
+      {/* ORGANIZERS (no glass) */}
+      <OrganizersSection glass/>
 
-      {/* PRIZE POOL */}
-      <NewPrizePoolSection />
+      {/* HOSTEL MANAGEMENT TEAM (glass) */}
+      <HostelTeamSection glass={false} />
 
-      {/* SPONSORS */}
-      <SponsorsSection />
+      {/* STUDENT COORDINATORS (no glass) */}
+      {/* <StudentCoordinatorsSection glass={false} /> */}
 
-      {/* GALLERY */}
-      <GallerySection />
+      {/* PRIZE POOL (glass) */}
+      <NewPrizePoolSection glass />
 
-      {/* ABOUT PREVIOUS EDITION */}
-      <AboutPreviousEditionSection />
+      {/* GALLERY (no glass) */}
+      <GallerySection glass={false} />
 
-      {/* FAQ */}
-      <FAQSection />
+      {/* ABOUT PREVIOUS EDITION (glass) */}
+      <AboutPreviousEditionSection glass />
+
+      {/* FAQ (no glass) */}
+      <FAQSection glass={false} />
 
       {/* FOOTER */}
       <Footer />
