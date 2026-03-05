@@ -5,14 +5,14 @@ const eventDetails = [
     icon: "fas fa-calendar-days",
     iconColor: "text-yellow-400",
     title: "Event Dates",
-    info: "27-28 March 2026",
+    info: "03 - 04 April 2026",
     description: "Two days of intense hackathon",
   },
   {
     icon: "fas fa-location-dot",
     iconColor: "text-emerald-400",
     title: "Venue",
-    info: "Updating Soon",
+    info: "AB-3 Amphitheatre",
     description: "Will be updated soon",
   },
   {
@@ -59,7 +59,7 @@ export default function EventDetailsSection({ glass = false }: { glass?: boolean
               <h3 className="mb-2 text-base sm:text-lg font-semibold text-white group-hover:text-black transition-colors duration-150">
                 {detail.title}
               </h3>
-              <p className="text-2xl sm:text-3xl font-bold text-emerald-300 mb-2 group-hover:text-black transition-colors duration-150">
+              <p className="text-xl sm:text-2xl font-bold text-emerald-300 mb-2 whitespace-nowrap group-hover:text-black transition-colors duration-150">
                 {detail.info}
               </p>
               {/*<p className="text-sm text-gray-400 group-hover:text-black transition-colors duration-150">

@@ -2,19 +2,24 @@ import OrganizerCard from "./OrganizerCard";
 
 const coordinators = [
   {
-    name: "StudentCoordinator1",
-    email: "student1@vitstudent.ac.in",
+    name: "Ayushi Tewari",
+    phone: "+91-9883370097",
     role: "Student Coordinator",
   },
   {
-    name: "StudentCoordinator2",
-    email: "student2@vitstudent.ac.in",
+    name: "Chandan",
+    phone: "+91-9792695075",
+    role: "Student Coordinator",
+  },
+  {
+    name: "Praveen",
+    phone: "+91-9363734906",
     role: "Student Coordinator",
   },
 ];
 
 export default function StudentCoordinatorsSection({
-  glass = true,
+  glass = false,
 }: {
   glass?: boolean;
 }) {
@@ -30,17 +35,19 @@ export default function StudentCoordinatorsSection({
 
       <div className="relative z-10 max-w-6xl mx-auto">
         <h2 className="text-2xl md:text-3xl font-bold">Student Coordinators</h2>
-        <p className="mt-1 text-gray-400 text-sm">
+        {/*<p className="mt-1 text-gray-400 text-sm">
           Your point of contact for all queries
-        </p>
+        </p>*/}
 
-        <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {coordinators.map((coordinator) => (
             <OrganizerCard
-              key={coordinator.email}
+              key={coordinator.phone}
               name={coordinator.name}
-              email={coordinator.email}
+              phone={coordinator.phone}
               role={coordinator.role}
+              avatarCharIndex={0}
+              smallEmailText
             />
           ))}
         </div>

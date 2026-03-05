@@ -9,6 +9,10 @@ const conveners = [
     name: "Dr. Felix A",
     role: "Co-Convener, Deputy Director – Hostel",
   },
+  {
+    name: "Dr. Velmathi G",
+    role: "Co-Convener, Deputy Director – Hostel",
+  },
 ];
 
 export default function ConvenersSection({ glass = true }: { glass?: boolean }) {
@@ -27,7 +31,7 @@ export default function ConvenersSection({ glass = true }: { glass?: boolean }) 
           Convener &amp; Co-Convener
         </h2>
 
-        <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-6">
           {conveners.map((person) => (
             <ConvenersCard
               key={person.name}   // ✅ changed key

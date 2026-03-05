@@ -22,8 +22,8 @@ export default function EventCountdown({ glass = true }: { glass?: boolean }) {
     setMounted(true);
     
     const calculateTimeLeft = () => {
-      // Event date: March 27, 2026 at 00:00:00
-      const eventDate = new Date("2026-03-27T00:00:00").getTime();
+      // Event date: April 3, 2026 at 16:00:00
+      const eventDate = new Date("2026-04-03T16:00:00").getTime();
       const now = new Date().getTime();
       const difference = eventDate - now;
 
@@ -100,7 +100,7 @@ export default function EventCountdown({ glass = true }: { glass?: boolean }) {
         {/* Event Info */}
         <div className="mt-8 text-center">
           <p className="text-gray-400 text-xs md:text-sm tracking-wider">
-            <span className="text-cyan-400 font-semibold">27TH - 28TH MARCH 2026</span>
+            <span className="text-cyan-400 font-semibold">3RD - 4TH APRIL 2026</span>
           </p>
         </div>
       </div>

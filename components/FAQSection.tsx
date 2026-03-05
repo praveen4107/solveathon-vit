@@ -16,12 +16,12 @@ const faqs: FAQItem[] = [
   {
     question: "What is the team size?",
     answer:
-      "Each team must consist of 4 to 6 members. Participants should form teams within this size limit before registration.",
+      "Each team must consist of exactly 5 members, so participants must form teams accordingly before registration.",
   },
   {
     question: "Is there any registration fee?",
     answer:
-      "No, there is absolutely no registration fee. Solve-A-Thon is completely free for all eligible participants.",
+      "Yes, the registration fee is ₹500 per team.",
   },
   {
     question: "Will participants receive certificates and prizes?",
@@ -31,7 +31,7 @@ const faqs: FAQItem[] = [
   {
     question: "When and where will the event be conducted?",
     answer:
-      "Solve-A-Thon will be conducted over two days — 27th March and 28th March — at Kasturiba Hall, VIT Chennai.",
+      "Solve-A-Thon will be conducted over two days — 3rd April and 4th April at AB-3 Amphitheatre, VIT Chennai.",
   },
 ];
 

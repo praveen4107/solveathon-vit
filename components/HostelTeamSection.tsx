@@ -72,11 +72,6 @@ const hostelTeam = [
   },
   // Wardens – E Block
   {
-    name: "Dr. Sunil Kumar Pradhan",
-    email: "wmhe.cc@vit.ac.in",
-    role: "Warden – E Block",
-  },
-  {
     name: "Dr. Rajeesh C S",
     email: "wmhe.cc@vit.ac.in",
     role: "Warden – E Block",
@@ -85,12 +80,12 @@ const hostelTeam = [
   {
     name: "Mr. Thamarai Selvan G",
     email: "chennai.suptmh@vit.ac.in",
-    role: "Superintendent – Men's Hostel",
+    role: "Superintendent",
   },
   {
     name: "Mr. Saravanan P",
     email: "chennai.dysuptmh@vit.ac.in",
-    role: "Deputy Superintendent – Men's Hostel",
+    role: "Deputy Superintendent",
   },
   // Supervisors by block
   {
@@ -118,6 +113,41 @@ const hostelTeam = [
     email: "mhurthie.vm@vit.ac.in",
     role: "Supervisor – E Block",
   },
+  {
+    name: "Dr. Vijayalakshmi V",
+    email: "wlh.cc@vit.ac.in",
+    role: "Warden",
+  },
+  {
+    name: "Dr. Vijayapriya R",
+    email: "wlhmaintenance.cc@vit.ac.in",
+    role: "Warden – Maintenance",
+  },
+  {
+    name: "Dr. Softya Sebastian",
+    email: "wlhdiscipline.cc@vit.ac.in",
+    role: "Warden – Discipline",
+  },
+  {
+    name: "Mrs. Ayesha Sidiqa",
+    email: "chennai.dysuptlh@vit.ac.in",
+    role: "Deputy Superintendent",
+  },
+  {
+    name: "Mrs. Geetha Premjith Nair",
+    email: "chennai.asstsuptlh@vit.ac.in",
+    role: "Assistant Superintendent",
+  },
+  {
+    name: "Ms. Kabita Nayar",
+    email: "%20kabitha.nayar@vit.ac.in",
+    role: "Supervisor – B Block",
+  },
+  {
+    name: "Ms. Abinaya S",
+    email: "abinaya.s@vit.ac.in",
+    role: "Supervisor – C Block",
+  },
 ];
 
 export default function HostelTeamSection({ glass = true }: { glass?: boolean }) {
@@ -133,13 +163,20 @@ export default function HostelTeamSection({ glass = true }: { glass?: boolean })
 
       <div className="relative z-10 max-w-6xl mx-auto">
         <h2 className="text-2xl md:text-3xl font-bold">Hostel Team</h2>
+        {/*<p className="mt-2 text-xs md:text-sm text-gray-400">
+          Wardens, superintendents, and supervisors for day-to-day operations.
+        </p>*/}
 
-        {/* List Layout */}
-        <ul className="mt-10 space-y-1">
+        <ul className="mt-8 md:columns-2 md:gap-x-10 text-sm md:text-base text-gray-200">
           {hostelTeam.map((member) => (
-            <li key={`${member.name}-${member.email}-${member.role}`}>
-              <span className="text-gray-100">{member.name}</span>
-              <span className="text-gray-400">{" – "}{member.role}</span>
+            <li
+              key={`${member.name}-${member.email}-${member.role}`}
+              className="flex items-start justify-between gap-3 border-b border-white/10 pb-3 mb-3 break-inside-avoid"
+            >
+              <div className="text-white font-semibold">{member.name}</div>
+              <div className="text-gray-400 text-right text-xs md:text-sm">
+                {member.role}
+              </div>
             </li>
           ))}
         </ul>

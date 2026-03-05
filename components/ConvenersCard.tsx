@@ -4,21 +4,21 @@ type ConvenersCardProps = {
     avatarCharIndex?: number;
   };
   
-  export default function ConvenersCard({
-    name,
-    role,
-    avatarCharIndex = 0,
-  }: ConvenersCardProps) {
-    return (
-      <div className="group relative">
-        {/* Glow effect */}
-        <div className="absolute inset-0 bg-gradient-to-br from-cyan-400/20 to-emerald-400/20 opacity-0 group-hover:opacity-100 transition duration-300" />
-  
-        <div className="relative bg-neutral-900/80 border border-cyan-400/40 p-6 md:p-8 text-center backdrop-blur-sm hover:border-cyan-400 transition-all duration-300">
-          {/* Avatar */}
-          <div className="w-16 md:w-20 h-16 md:h-20 rounded-full bg-gradient-to-br from-cyan-400 to-emerald-400 mx-auto mb-4 flex items-center justify-center flex-shrink-0">
-            <div className="text-xl md:text-2xl font-bold text-black">
-              {name.charAt(avatarCharIndex)}
+export default function ConvenersCard({
+  name,
+  role,
+  avatarCharIndex = 0,
+}: ConvenersCardProps) {
+  return (
+    <div className="group relative md:h-full">
+      {/* Glow effect */}
+      <div className="absolute inset-0 bg-gradient-to-br from-cyan-400/20 to-emerald-400/20 opacity-0 group-hover:opacity-100 transition duration-300" />
+
+      <div className="relative bg-neutral-900/80 border border-cyan-400/40 p-6 md:p-8 text-center backdrop-blur-sm hover:border-cyan-400 transition-all duration-300 md:h-full">
+        {/* Avatar */}
+        <div className="w-16 md:w-20 h-16 md:h-20 rounded-full bg-gradient-to-br from-cyan-400 to-emerald-400 mx-auto mb-4 flex items-center justify-center flex-shrink-0">
+          <div className="text-xl md:text-2xl font-bold text-black">
+            {name.charAt(avatarCharIndex)}
             </div>
           </div>
   

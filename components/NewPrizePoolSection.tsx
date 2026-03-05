@@ -1,21 +1,15 @@
 const prizes = [
   {
-    icon: "fas fa-trophy",
-    iconColor: "text-yellow-400",
     title: "1st Place",
     amount: "₹10,000",
     description: "For the winning team",
   },
   {
-    icon: "fas fa-medal",
-    iconColor: "text-gray-300",
     title: "2nd Place",
     amount: "₹7,000",
     description: "Runner-up recognition",
   },
   {
-    icon: "fas fa-award",
-    iconColor: "text-orange-400",
     title: "3rd Place",
     amount: "₹5,000",
     description: "Third place achievement",
@@ -41,22 +35,23 @@ export default function NewPrizePoolSection({ glass = false }: { glass?: boolean
 
         <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {prizes.map((prize, idx) => (
-            <div
-              key={idx}
-              className="bg-neutral-900/60 border border-cyan-400/30 p-5 sm:p-6 lg:p-8 hover:border-emerald-400/60 transition-all group"
-            >
-              <div className={`text-4xl sm:text-5xl mb-3 sm:mb-4 ${prize.iconColor}`}>
-                <i className={prize.icon} />
+            <div key={idx} className="group relative">
+              <div className="absolute inset-0 bg-gradient-to-br from-cyan-400/20 to-emerald-400/20 opacity-0 group-hover:opacity-100 transition duration-300" />
+
+              <div className="relative bg-neutral-900/60 border border-cyan-400/30 p-5 sm:p-6 lg:p-8 hover:border-emerald-400/60 transition-all duration-300">
+                <div className="text-3xl sm:text-4xl font-bold mb-3 sm:mb-4 text-emerald-300 tracking-widest">
+                  #{idx + 1}
+                </div>
+                <h3 className="text-lg sm:text-xl font-bold text-white mb-2 sm:mb-3">
+                  {prize.title}
+                </h3>
+                <p className="text-3xl sm:text-4xl font-bold text-cyan-400 mb-2 sm:mb-3">
+                  {prize.amount}
+                </p>
+                {/*<p className="text-sm text-gray-400">
+                  {prize.description}
+                </p>*/}
               </div>
-              <h3 className="text-lg sm:text-xl font-bold text-white mb-2 sm:mb-3">
-                {prize.title}
-              </h3>
-              <p className="text-3xl sm:text-4xl font-bold text-cyan-400 mb-2 sm:mb-3">
-                {prize.amount}
-              </p>
-              {/*<p className="text-sm text-gray-400">
-                {prize.description}
-              </p>*/}
             </div>
           ))}
         </div>

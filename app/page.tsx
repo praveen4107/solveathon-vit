@@ -10,6 +10,7 @@ import OrganizersSection from "../components/OrganizersSection";
 import HostelTeamSection from "../components/HostelTeamSection";
 import StudentCoordinatorsSection from "../components/StudentCoordinatorsSection";
 import NewPrizePoolSection from "../components/NewPrizePoolSection";
+import TimelineSection from "../components/TimelineSection";
 import GallerySection from "../components/GallerySection";
 import AboutPreviousEditionSection from "../components/AboutPreviousEditionSection";
 import FAQSection from "../components/FAQSection";
@@ -45,7 +46,7 @@ export default function Home() {
         </p>
 
         <p className="mt-2 text-xs md:text-sm text-gray-400">
-          27TH – 28TH MARCH 2026
+          3RD – 4TH APRIL 2026
         </p>
 
         <div className="mt-8 md:mt-10 flex justify-center gap-3 md:gap-4 flex-wrap">
@@ -73,6 +74,12 @@ export default function Home() {
       {/* EVENT DETAILS (glass) */}
       <EventDetailsSection glass={false} />
 
+      {/* PRIZE POOL (glass) */}
+      <NewPrizePoolSection glass />
+
+      {/* TIMELINE (glass) */}
+      <TimelineSection glass={false} />
+
       {/* THEMES & PROBLEM STATEMENTS (no glass) */}
       <ThemesSection glass />
 
@@ -82,14 +89,11 @@ export default function Home() {
       {/* ORGANIZERS (no glass) */}
       <OrganizersSection glass/>
 
-      {/* HOSTEL MANAGEMENT TEAM (glass) */}
-      <HostelTeamSection glass={false} />
-
       {/* STUDENT COORDINATORS (no glass) */}
-      {/* <StudentCoordinatorsSection glass={false} /> */}
+      <StudentCoordinatorsSection glass={false} />
 
-      {/* PRIZE POOL (glass) */}
-      <NewPrizePoolSection glass />
+      {/* HOSTEL MANAGEMENT TEAM (glass) */}
+      <HostelTeamSection glass />
 
       {/* GALLERY (no glass) */}
       <GallerySection glass={false} />

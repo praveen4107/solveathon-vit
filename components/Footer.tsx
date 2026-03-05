@@ -26,7 +26,7 @@ export default function Footer() {
               Code - Compete - Conquer
             </p>
             <p className="text-gray-500 text-xs mt-2">
-              27th - 28th March 2026
+              3rd - 4th April 2026
             </p>
           </div>
 
@@ -52,26 +52,42 @@ export default function Footer() {
 
           {/* Contact */}
           <div className="space-y-4">
-  <h4 className="text-base md:text-lg font-bold text-white mb-4 tracking-widest uppercase">
-    Contact Us
-  </h4>
+            <h4 className="text-base md:text-lg font-bold text-white mb-4 tracking-widest uppercase">
+              Contact Us
+            </h4>
 
-  <div>
-    <p className="font-medium text-white text-sm md:text-base">
-      Dr. Natarajan B
-      <span className="block text-gray-400 text-xs md:text-sm font-normal">
-        Event Coordinator
-      </span>
-    </p>
+              <div>
+                <p className="font-medium text-white text-sm md:text-base">
+                  Dr. Natarajan B
+                  <span className="block text-gray-400 text-xs md:text-sm font-normal">
+                    Event Coordinator
+                  </span>
+                </p>
 
-    <a
-      href="mailto:natarajan.b@vit.ac.in"
-      className="mt-2 inline-flex items-center gap-2 text-gray-300 hover:text-cyan-400 transition-colors text-sm"
-    >
-      <i className="fas fa-envelope text-cyan-400" />
-      natarajan.b@vit.ac.in
-    </a>
-  </div>
+                <a
+                  href="mailto:natarajan.b@vit.ac.in"
+                  className="mt-2 inline-flex items-center gap-2 text-gray-300 hover:text-cyan-400 transition-colors text-sm"
+                >
+                  <i className="fas fa-envelope text-cyan-400" />
+                  natarajan.b@vit.ac.in
+                </a>
+              </div>
+              <div>
+                <p className="font-medium text-white text-sm md:text-base">
+                  Dr. Revathi M
+                  <span className="block text-gray-400 text-xs md:text-sm font-normal">
+                    Event Coordinator
+                  </span>
+                </p>
+
+                <a
+                  href="mailto:m.revathi@vit.ac.in"
+                  className="mt-2 inline-flex items-center gap-2 text-gray-300 hover:text-cyan-400 transition-colors text-sm"
+                >
+                  <i className="fas fa-envelope text-cyan-400" />
+                  m.revathi@vit.ac.in
+                </a>
+              </div>
 
   <div className="flex items-start gap-2 text-gray-400 text-sm">
     <i className="fas fa-map-marker-alt text-emerald-300 mt-1 flex-shrink-0" />

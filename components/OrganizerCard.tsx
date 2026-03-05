@@ -1,11 +1,20 @@
 type OrganizerCardProps = {
   name: string;
   email?: string;
+  phone?: string;
   role?: string;
   avatarCharIndex?: number;
+  smallEmailText?: boolean;
 };
 
-export default function OrganizerCard({ name, email, role, avatarCharIndex = 0 }: OrganizerCardProps) {
+export default function OrganizerCard({
+  name,
+  email,
+  phone,
+  role,
+  avatarCharIndex = 0,
+  smallEmailText = false,
+}: OrganizerCardProps) {
   return (
     <div className="group relative">
       {/* Glow effect */}
@@ -31,14 +40,30 @@ export default function OrganizerCard({ name, email, role, avatarCharIndex = 0 }
           </p>
         )}
 
-        {/* Email */}
-        <a
-          href={`mailto:${email}`}
-          className="inline-flex items-center gap-2 mt-4 text-xs md:text-sm text-gray-400 hover:text-cyan-400 transition break-all"
-        >
-          <i className="fas fa-envelope text-cyan-400" />
-          {email}
-        </a>
+        {/* Contact */}
+        {phone ? (
+          <a
+            href={`tel:${phone.replace(/\s+/g, "")}`}
+            className={`inline-flex items-center gap-2 mt-4 ${
+              smallEmailText ? "text-[11px] md:text-xs" : "text-xs md:text-sm"
+            } text-gray-400 hover:text-cyan-400 transition break-all`}
+          >
+            <i className="fas fa-phone text-cyan-400" />
+            {phone}
+          </a>
+        ) : (
+          email && (
+            <a
+              href={`mailto:${email}`}
+              className={`inline-flex items-center gap-2 mt-4 ${
+                smallEmailText ? "text-[11px] md:text-xs" : "text-xs md:text-sm"
+              } text-gray-400 hover:text-cyan-400 transition break-all`}
+            >
+              <i className="fas fa-envelope text-cyan-400" />
+              {email}
+            </a>
+          )
+        )}
       </div>
     </div>
   );

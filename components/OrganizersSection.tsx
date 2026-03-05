@@ -16,18 +16,15 @@ const facultyOrganizers = [
     email: "natarajan.b@vit.ac.in",
     role: "Event Coordinator",
   },
-];
-
-const studentCoordinators = [
   {
-    name: "Praveen",
-    email: "praveenraj.j2024@vitstudent.ac.in",
-    role: "Student Coordinator",
+    name: "Dr. Vijayalakshmi V",
+    email: "vijayalakshmi.v@vit.ac.in",
+    role: "Event Coordinator",
   },
   {
-    name: "Chandan",
-    email: "chandan.singh2024@vitstudent.ac.in",
-    role: "Student Coordinator",
+    name: "Dr. Revathi M",
+    email: "m.revathi@vit.ac.in",
+    role: "Event Coordinator",
   },
 ];
 
@@ -54,23 +51,6 @@ export default function OrganizersSection({ glass = false }: { glass?: boolean }
               email={organizer.email}
               role={organizer.role}
               avatarCharIndex={4}
-            />
-          ))}
-        </div>
-
-        {/* Student Coordinators */}
-        <h3 className="mt-14 text-xl md:text-2xl font-semibold">
-          Student Coordinators
-        </h3>
-
-        <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6">
-          {studentCoordinators.map((student) => (
-            <OrganizerCard
-              key={student.email}
-              name={student.name}
-              email={student.email}
-              role={student.role}
-              avatarCharIndex={0}
             />
           ))}
         </div>

@@ -17,12 +17,12 @@ export default function ProblemsPage() {
             PROBLEM STATEMENTS
           </h1>
 
-          <p className="mt-3 text-xs md:text-sm tracking-widest text-white">
+          {/*<p className="mt-3 text-xs md:text-sm tracking-widest text-white">
             Code - Compete - Conquer
-          </p>
+          </p>*/}
 
           <p className="mt-4 text-xs md:text-sm text-gray-400">
-            20 UNIQUE CHALLENGES TO SOLVE
+            9 UNIQUE CHALLENGES TO SOLVE
           </p>
 
           {/*<p className="mt-2 text-xs md:text-sm text-gray-400">
@@ -31,8 +31,7 @@ export default function ProblemsPage() {
 
           <div className="mt-8 md:mt-10 flex justify-center gap-3 md:gap-4 flex-wrap">
             <a
-              href="/documents/ProblemStatements_Themes.docx"
-              download
+              href="https://drive.google.com/uc?export=download&id=1_KWERkgTGFO2qDVxGKHQMMx8bMpxUAZ2"
               className="bg-emerald-300 text-black px-5 md:px-7 py-2 md:py-3 font-bold text-sm hover:bg-emerald-200 transition flex items-center gap-2 cursor-pointer"
             >
               <i className="fas fa-download" />

@@ -3,7 +3,12 @@
 import { useEffect, useRef, useState } from "react";
 
 export default function ScrollingBar() {
-  const blocks = ["Registrations Now Open for Solve-A-Thon’26", "27–28 March 2026", "Secure Your Team’s Spot"];
+  const blocks = [
+    "Registrations Now Open for Solve-A-Thon’26",
+    "03-04 April 2026",
+    "Secure Your Team’s Spot",
+    "Registration Fee: ₹500"
+  ];
 
   const containerRef = useRef<HTMLDivElement>(null);
   const trackRef = useRef<HTMLDivElement>(null);
